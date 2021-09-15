@@ -2,6 +2,11 @@ module.exports = app => {
     const AmbiClient = require("../controller/controller")
     const router = require("express").Router()
 
+    // Test route
+    router.get("/teste", (req, res) => {
+        res.status(200).json({server: 'status ok'})
+    })
+
     // // Create a new Tutorial
     router.post("/", AmbiClient.create)
 
@@ -20,6 +25,6 @@ module.exports = app => {
     // // Delete all Tutorials
     // router.delete("/", AmbiClient.deleteAll)
 
-    app.use('/api/Ambclients', router)
+    app.use('/ambiserials', router)
 
 }
